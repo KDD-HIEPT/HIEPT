@@ -1,6 +1,6 @@
 import os
 
-data_set = 'douban'
+data_set = 'douban' # available datasets:douban, weiobo, twitter, zhihu
 min_topic_length = 10
 max_topic_length = 10000
 data_path = os.path.abspath(os.path.dirname(os.getcwd()) + os.path.sep + ".")
