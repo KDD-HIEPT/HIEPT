@@ -2,6 +2,7 @@
 source code for HIEPT
 
 ## Requirements
+- python==2.7
 -  tensorflow==1.3.0
 -  numpy==1.14.0
 -  bitarray==0.8.1
@@ -16,10 +17,9 @@ In ` data` folder, we can see four datasets. There are three subfolders in each 
 - tweets_embedding:embedding for user's tweets, we use [gensim](https://radimrehurek.com/gensim/models/doc2vec.html) to implement [doc2vec](https://arxiv.org/pdf/1405.4053v2.pdf)
 
 ## Usage
-To run HIEPT, use the following code in terminal at `src` folder:
-> python main.py
+To run HIEPT, clone the project to you python IDE(eg:Pycharm), run the `main.py`.
+>Note:you need install the requirements libs.
 
-Or clone the project to you python IDE(eg:Pycharm)
 ## Configuration
 Change the configuration in `src/config.py`:
 - data_set:which dataset you want to run,available datasets:`douban`, `weiobo`, `twitter`, `zhihu`
