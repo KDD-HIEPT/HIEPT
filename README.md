@@ -24,4 +24,5 @@ Or clone the project to you python IDE(eg:Pycharm)
 Change the configuration in `src/config.py`:
 - data_set:which dataset you want to run,available datasets:`douban`, `weiobo`, `twitter`, `zhihu`
 - ne_type:the network embedding type,available parameters:`node2vec`, `line`, `tadw`, `deepwalk`, `stuct2vec`, `cane`
+
 You can find more configuration params in `src/config.py`
