@@ -2,11 +2,11 @@
 Python implementation for HIEPT (Hashing User Intrinsic and Extrinsic Preference for Next Topic Prediction)
 
 ## Requirements
-- python>=2.7
-- tensorflow>=1.3.0
-- numpy>=1.14.0
-- bitarray>=0.8.1
-- matplotlib>=1.5.11
+- python >= 2.7
+- tensorflow >= 1.3.0
+- numpy >= 1.14.0
+- bitarray >= 0.8.1
+- matplotlib >= 1.5.11
 
 ## DataSets
 The datasets used in this project are from four main social media platforms, including twitter, weibo.com, zhihu.com, douban.com, and Twitter.com. Due to the privacy concern, we do not provide the raw data (available upon request). However, the intermediate data, such as two types of embedding vectors (tweets and social networks) can be found in the ` data`  folder.
