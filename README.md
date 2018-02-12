@@ -1,28 +1,28 @@
 # HIEPT
-source code for HIEPT
+Python implementation for HIEPT (Hashing User Intrinsic and Extrinsic Preference for Next Topic Prediction)
 
 ## Requirements
-- python==2.7
--  tensorflow==1.3.0
--  numpy==1.14.0
--  bitarray==0.8.1
--  matplotlib==1.5.11
+- python>=2.7
+- tensorflow>=1.3.0
+- numpy>=1.14.0
+- bitarray>=0.8.1
+- matplotlib>=1.5.11
 
 ## DataSets
-We crawled four datasets to evaluate HIEPT including twitter, weibo, zhihu, douban. Due to privacy protection, we do not provide the raw data. Fortunately, we provide the embedding data for both tweets and social networks, which you can find in the ` data`  folder.
+The datasets used in this project are from four main social media platforms, including twitter, weibo.com, zhihu.com, douban.com, and Twitter.com. Due to the privacy concern, we do not provide the raw data (available upon request). However, the intermediate data, such as two types of embedding vectors (tweets and social networks) can be found in the ` data`  folder.
 
-In ` data` folder, we can see four datasets. There are three subfolders in each dataset:
-- graph_embedding:embedding for social networks, include [DeepWalk](https://github.com/phanein/deepwalk), [LINE](https://github.com/tangjianpku/LINE), [node2vec](https://github.com/aditya-grover/node2vec), [CANE](https://github.com/thunlp/cane), [TADW](https://github.com/thunlp/TADW),[struc2vec](https://github.com/leoribeiro/struc2vec)
-- topics:user joined topics, each line means a topic,each number in a line means a userid
-- tweets_embedding:embedding for user's tweets, we use [gensim](https://radimrehurek.com/gensim/models/doc2vec.html) to implement [doc2vec](https://arxiv.org/pdf/1405.4053v2.pdf)
+The ` data` folder consists of four datasets, each having three subfolders:
+- graph_embedding: embedding vectors for social networks, include [DeepWalk](https://github.com/phanein/deepwalk), [LINE](https://github.com/tangjianpku/LINE), [node2vec](https://github.com/aditya-grover/node2vec), [CANE](https://github.com/thunlp/cane), [TADW](https://github.com/thunlp/TADW),[struc2vec](https://github.com/leoribeiro/struc2vec)
+- topics: topics that users have joined to discuss, each line represents a topic and every value in a line is a userid
+- tweets_embedding: embedding vectors for user tweets, we use [gensim](https://radimrehurek.com/gensim/models/doc2vec.html) to implement [doc2vec](https://arxiv.org/pdf/1405.4053v2.pdf)
 
 ## Usage
-To run HIEPT, clone the project to you python IDE(eg:Pycharm), run the `main.py`.
->Note:you need install the requirements libs.
+To run HIEPT, first clone the project to your python IDE (eg:Pycharm), then run the `main.py`.
+>Note: you need to install the required libs.
 
 ## Configuration
 Change the configuration in `src/config.py`:
-- data_set:which dataset you want to run,available datasets:`douban`, `weiobo`, `twitter`, `zhihu`
-- ne_type:the network embedding type,available parameters:`node2vec`, `line`, `tadw`, `deepwalk`, `stuct2vec`, `cane`
+- data_set: specify which dataset you want to run. Possible values are:`douban`, `weiobo`, `twitter`, `zhihu`
+- ne_type: specify the network embedding type. Possible values are:`node2vec`, `line`, `tadw`, `deepwalk`, `stuct2vec`, `cane`
 
-You can find more configuration params in `src/config.py`
+You can find more configuration parameters in `src/config.py`
