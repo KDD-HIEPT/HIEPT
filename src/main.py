@@ -8,14 +8,16 @@ data = DataPro(delimiter='\t', ne_type=ne_type)
 
 
 def hiept():
-    # hashing user's network embedding
+    # hashing user social network embedding vectors
     encoder_data = data.inputs
     network_lsh = LSHash(network_hash_size, np.shape(encoder_data)[1])
     for v in encoder_data:
         network_lsh.index(v)
+        
     network_hamming_code = network_lsh.hamming_code()
     show('network_hamming shape:' + str(np.shape(network_hamming_code)))
-    # hashing user's tweets embedding
+    
+    # hashing user tweets embedding vectors
     tweets_embedding = data.tweets_embedding
     user_lsh = LSHash(tweets_embedding_hash_size, len(tweets_embedding[0]))
     for embedding in tweets_embedding:
@@ -23,9 +25,11 @@ def hiept():
     user_hamming_code = user_lsh.hamming_code()
     show('user_hamming shape:' + str(np.shape(user_hamming_code)))
     assert len(network_hamming_code) == len(user_hamming_code)
+    
     # concatenate hamming code for tweets and network
     hamming_code = np.hstack((network_hamming_code, user_hamming_code))
     assert len(hamming_code[0]) == network_hash_size + tweets_embedding_hash_size
+    
     train_inputs, test_inputs, train_labels, test_labels = split_data(hamming_code, data.labels, rate=0.3, seed=1)
     with tf.Session() as sess:
         with tf.variable_scope('models'):
