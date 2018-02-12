@@ -8,7 +8,7 @@ Python implementation for HIEPT (Hashing User Intrinsic and Extrinsic Preference
 - bitarray >= 0.8.1
 - matplotlib >= 1.5.11
 
-## DataSets
+## Datasets
 The datasets used in this project are from four main social media platforms, including twitter, weibo.com, zhihu.com, douban.com, and Twitter.com. Due to the privacy concern, we do not provide the raw data (available upon request). However, the intermediate data, such as two types of embedding vectors (tweets and social networks) can be found in the ` data`  folder.
 
 The ` data` folder consists of four datasets, each having three subfolders:
